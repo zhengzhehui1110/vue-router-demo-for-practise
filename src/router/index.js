@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import NavigateGuard from '@/views/NavigateGuard'
 import NGlobal from '@/views/navigateGuard/NGlobal'
 import NPrivate from '@/views/navigateGuard/NPrivate'
+import User1 from '@/views/user1.vue'
+import Props from '@/views/props/Props'
+import NavigateFunc from '@/views/NavigateFunc'
 
 
 Vue.use(VueRouter)
@@ -27,10 +30,24 @@ const routes = [
             next()
           },
       },
-      
-
     ]
-
+  },
+  {
+    path:'/user/:id/:place',
+    name:'User1',
+    component: User1,
+    // 2.将新的组件添加到routes表中,完成path到组件的映射
+  },
+  {
+    path:'/props',
+    name:'Props',
+    component:Props,
+    props:true
+  },
+  {
+    path:'/navigatef',
+    name:'NavigateF',
+    component:NavigateFunc,
   },
 ]
 

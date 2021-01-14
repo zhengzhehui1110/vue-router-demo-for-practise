@@ -8,7 +8,7 @@
       <el-aside width="200px">
         <el-col :span="20">
           <h3>MENU</h3>
-          <el-menu>
+          <el-menu background-color="#F0F0F0">
             <el-menu-item index="1">
               <span slot="title">
                 <router-link :to="{name:'NavigateGuard'}">
@@ -16,7 +16,27 @@
                 </router-link>
               </span>
             </el-menu-item>
-
+            <el-menu-item index="2">
+              <span slot="title">
+                <router-link to='/user/zheng/GuangZhou'>
+                  动态路由
+                </router-link>
+              </span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <span slot="title">
+                <router-link :to="{name:'Props',params:{name:myProp}}">
+                  路由传参
+                </router-link>
+              </span>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <span slot="title">
+                <router-link :to="{name:'NavigateF'}">
+                  编程式导航
+                </router-link>
+              </span>
+            </el-menu-item>
 
 
 
@@ -31,6 +51,17 @@
     <!-- <router-view/> -->
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      myProp:'HELLO',
+    }
+  },
+}
+</script>
+
 
 <style>
 #app {
@@ -53,4 +84,5 @@
 #nav,a.router-link-exact-active {
   color: #4863ff;
 }
+
 </style>
