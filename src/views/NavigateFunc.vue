@@ -28,8 +28,20 @@
             <el-button type="primary"
             @click="RouterPush(pageName)">router.push</el-button>                
         </el-row>
-        <el-row :gutter="40">
-            <el-button type="primary">router.replace</el-button>
+        <el-row :gutter="10">
+            <el-col :span="6">
+                <el-select v-model="pageNameRep" placeholder="请选择">
+                    <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                    >
+                    </el-option>
+                </el-select>
+            </el-col>
+                <el-button type="primary"
+                @click="RouterReplace(pageNameRep)">router.replace</el-button>
         </el-row>
     </div>
 </template>
@@ -40,12 +52,13 @@ export default {
         return {
             step:0,
             pageName:'NavigateGuard',
+            pageNameRep:'NavigateGuard',
             // value:'', // 这是在选择器上的被选中的值
             options:[
                 {value:'NavigateGuard',label:'NavigateGuard'},
                 {value:'User1',label:'User1'},
                 {value:'Props',label:'Props'},
-            ]
+            ],
         }
     },
     methods:{
@@ -54,7 +67,16 @@ export default {
         },
         RouterPush(val){
             this.$router.push({name:val});
-        }
+        },
+        RouterReplace(val){
+            this.$router.replace({name:val});
+        },
     }
 }
 </script>
+
+<style lang="css">
+    .el-row{
+        margin-bottom: 20px;
+    }
+</style>

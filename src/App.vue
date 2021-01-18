@@ -18,7 +18,7 @@
             </el-menu-item>
             <el-menu-item index="2">
               <span slot="title">
-                <router-link to='/user/zheng/GuangZhou'>
+                <router-link :to="{name:'User1'}">
                   动态路由
                 </router-link>
               </span>
@@ -34,6 +34,13 @@
               <span slot="title">
                 <router-link :to="{name:'NavigateF'}">
                   编程式导航
+                </router-link>
+              </span>
+            </el-menu-item>
+            <el-menu-item index="5">
+              <span slot="title">
+                <router-link :to="{name:'AnimatePage'}">
+                  过渡动效
                 </router-link>
               </span>
             </el-menu-item>

@@ -6,9 +6,18 @@ import NPrivate from '@/views/navigateGuard/NPrivate'
 import User1 from '@/views/user1.vue'
 import Props from '@/views/props/Props'
 import NavigateFunc from '@/views/NavigateFunc'
-
+import AnimatePage from '@/views/Animate'
 
 Vue.use(VueRouter)
+
+//获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+   return originalPush.call(this, location).catch(err => err)
+}
+
+const AnimateTest = { template: '<div class="bar">animate test</div>' }
 
 const routes = [
   {
@@ -48,6 +57,14 @@ const routes = [
     path:'/navigatef',
     name:'NavigateF',
     component:NavigateFunc,
+  },
+  {
+    path:'/animatePage',
+    name:'AnimatePage',
+    component:AnimatePage,
+    children:[
+      {path:'test', component:AnimateTest},
+    ],
   },
 ]
 
