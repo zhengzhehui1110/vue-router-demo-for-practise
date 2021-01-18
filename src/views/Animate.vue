@@ -12,7 +12,6 @@
                     </el-option>
                 </el-select>
             </el-col>
-            <el-col :span="6">{{transitionName}}</el-col>
             <el-button type="primary"
             @click="jump('/animatePage/test')">确认</el-button>
             <el-button type="primary" @click="goback()">还原</el-button>

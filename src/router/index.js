@@ -69,7 +69,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
 })
 
 // 全局守卫
