@@ -7,6 +7,8 @@ import User1 from '@/views/user1.vue'
 import Props from '@/views/props/Props'
 import NavigateFunc from '@/views/NavigateFunc'
 import AnimatePage from '@/views/Animate'
+import IRFather from '@/views/regIn/father'
+
 
 Vue.use(VueRouter)
 
@@ -65,6 +67,11 @@ const routes = [
     children:[
       {path:'test', component:AnimateTest},
     ],
+  },
+  {
+    path:'/regIn',
+    name:'RegIn',
+    component:IRFather,
   },
 ]
 

@@ -44,6 +44,13 @@
                 </router-link>
               </span>
             </el-menu-item>
+            <el-menu-item index="6">
+              <span slot="title">
+                <router-link :to="{name:'RegIn'}">
+                  研究registerInstance
+                </router-link>
+              </span>
+            </el-menu-item>
 
 
 
