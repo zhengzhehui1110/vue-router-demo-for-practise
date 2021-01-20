@@ -1,5 +1,6 @@
 <template>
     <div id="children">
+        <div style="float:left">id = children</div>
         <h4>我是没有注册在路由表中的子组件</h4>
         <span>console打印出具有该方法的组件</span><br>
         <el-button type="primary"
